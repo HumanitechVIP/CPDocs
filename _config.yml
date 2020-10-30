@@ -29,6 +29,15 @@ url: "https://humanitechvip.github.io" # the base hostname & protocol for your s
 twitter_username:
 github_username: HumanitechVIP
 
+search_enabled: true
+search.heading_level: 2
+search.previews: 3
+search.preview_words_before: 5
+search.preview_words_after: 10
+search.tokenizer_separator: /[\s/]+/
+search.rel_url: false
+search.button: true
+
 # Build settings
 # theme: just-the-docs
 remote_theme: pmarsceill/just-the-docs
