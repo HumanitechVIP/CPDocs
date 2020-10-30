@@ -9,15 +9,15 @@
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 #
 title: HumaniTech VIP Crop Pricing
-#email: humanitechapp@gmail.com
-# description: >- # this means to ignore newlines until "baseurl:"
-#   This is a documentation for the HumanitechVIP Crop Pricing group. We will
-#   use this page to maintain resources, notes, and other relevant information
-#   (because looking through personal VIP Notebooks is not efficient).
+email: humanitechapp@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  This is a documentation for the HumanitechVIP Crop Pricing group. We will
+  use this page to maintain resources, notes, and other relevant information
+  (because looking through personal VIP Notebooks is not efficient).
 baseurl: "/CPDocs" # the subpath of your site, e.g. /blog
 url: "https://humanitechvip.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-#twitter_username:
-#github_username: HumanitechVIP
+twitter_username:
+github_username: HumanitechVIP
 
 # search_enabled: false
 # search.heading_level: 2
@@ -31,5 +31,5 @@ url: "https://humanitechvip.github.io" # the base hostname & protocol for your s
 # Build settings
 # theme: just-the-docs
 remote_theme: pmarsceill/just-the-docs
-#plugins:
-#  - jekyll-feed
+plugins:
+  - jekyll-feed
