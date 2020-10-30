@@ -24,14 +24,14 @@ description: >- # this means to ignore newlines until "baseurl:"
   This is a documentation for the HumanitechVIP Crop Pricing group. We will
   use this page to maintain resources, notes, and other relevant information
   (because looking through personal VIP Notebooks is not efficient).
-baseurl: "/CPDocs/" # the subpath of your site, e.g. /blog
+baseurl: "/CPDocs" # the subpath of your site, e.g. /blog
 url: "humanitechvip.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username:
 github_username: HumanitechVIP
 
 # Build settings
-# theme: just-the-docs
-remote-theme: pmarsceill/just-the-docs
+theme: just-the-docs
+# remote-theme: pmarsceill/just-the-docs
 plugins:
   - jekyll-feed
 # Exclude from processing.
