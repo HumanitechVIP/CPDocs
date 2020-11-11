@@ -2,7 +2,7 @@
 layout: default
 title: Front End
 nav_order: 1
-has_children: true
+has_children: false
 ---
 
 The following page has been contributed by Alan Matias.
