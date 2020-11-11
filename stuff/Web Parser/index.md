@@ -4,7 +4,8 @@ title: Web Parser
 nav_order: 2
 has_children: false
 ---
-# Web Parser Guide - HumaniTech VIP Crop Pricing App Fall 2020 - Emma Barron, Rachna Sahasrabudhe
+# Web Parser Guide
+By Emma Barron, Rachna Sahasrabudhe
 
 ## Objective
 Our goal was to create a parser to get data from Kenya's government website http://www.nafis.go.ke/category/market-info/ to our API. This involved 3 main steps: automating the downloads of the excel files, converting those to csvs, converting the csvs to json objects, and pushing those to the api. Here's a brief rundown of the python files and methods included. 
