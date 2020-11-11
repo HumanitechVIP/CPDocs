@@ -2,6 +2,7 @@
 layout: page
 title: About
 permalink: /about/
+nav_order: 5
 ---
 
 We are the HumanitechVIP Crop Pricing App subgroup. This documentation is meant to serve as a reference point for our group to share resources and notes.
