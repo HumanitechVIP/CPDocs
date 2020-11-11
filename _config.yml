@@ -19,7 +19,7 @@ url: "https://humanitechvip.github.io" # the base hostname & protocol for your s
 twitter_username:
 github_username: HumanitechVIP
 
-# search_enabled: false
+search_enabled: false
 # search.heading_level: 2
 # search.previews: 3
 # search.preview_words_before: 5
