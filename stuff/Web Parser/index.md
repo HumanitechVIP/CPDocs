@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Web Parser
-nav_order: 1
+nav_order: 2
 has_children: false
 ---
 # Web Parser Guide - HumaniTech VIP Crop Pricing App Fall 2020 - Emma Barron, Rachna Sahasrabudhe
