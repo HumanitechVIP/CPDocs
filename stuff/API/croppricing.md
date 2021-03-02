@@ -2,18 +2,23 @@
 layout: default
 title: Crop Price Listings
 parent: API
-nav_order: 1
+nav_order: 2
 ---
+
 By Vincent Huynh
+
 # Crop Price Listings
 
 ## Create Crop Listing
+
 Create a crop listing by pushing a **POST** request:
 
 ```
 POST http://croppricingapi.herokuapp.com/api/cropprices
 ```
+
 ### With Content
+
 ```
 headers: {
     'Content-Type': 'application/json'
@@ -30,7 +35,9 @@ body: {
     }
 }
 ```
+
 ### Returns
+
 ```
 {
     "_id": "5fac27e331e9940017aa16c8",
@@ -44,7 +51,9 @@ body: {
     "__v": 0
 }
 ```
+
 ### Errors
+
 All errors from the server should be returned in a JSON format, contained in an array called "errors". For example, if you forgot to add the **weight** and **price** for a listing, you will get the following:
 
 ```
@@ -63,14 +72,15 @@ All errors from the server should be returned in a JSON format, contained in an 
     ]
 }
 ```
-This will allow us to loop through this array and see what errors we encountered.
 
+This will allow us to loop through this array and see what errors we encountered.
 
 ### For example,
 
 ```
 POST croppricingapi.herokuapp.com/api/cropprices
 ```
+
 ```
 headers: {
     'Content-Type': 'application/json'
@@ -87,7 +97,9 @@ body: {
     }
 }
 ```
+
 ### Returns
+
 ```
 {
     "_id": "5fac27e331e9940017aa16c8",
@@ -101,12 +113,17 @@ body: {
     "__v": 0
 }
 ```
+
 ## Get a Crop Listing
+
 ```
 GET croppricingapi.herokuapp.com/api/cropprices/listing/YYYY-MM-DD-crop
 ```
+
 This get assumes you already know the listing based on the "code."
+
 ### Returns
+
 ```
 {
     "_id": "5fac27e331e9940017aa16c8",
@@ -120,7 +137,9 @@ This get assumes you already know the listing based on the "code."
     "__v": 0
 }
 ```
+
 ### If a Listing is Not Found:
+
 ```
 {
     "msg": "Listing not found"
@@ -128,25 +147,31 @@ This get assumes you already know the listing based on the "code."
 ```
 
 ## Delete a Listing
-To delete a listing, send a DELETE request to 
+
+To delete a listing, send a DELETE request to
+
 ```
 croppricingapi.herokuapp.com/api/cropprices/listing/YYYY-MM-DD-crop
 ```
+
 ### For example,
+
 ```
 croppricingapi.herokuapp.com/api/cropprices/listing/2020-10-15-deleteme4
 ```
+
 Returns the following after a successful removal.
+
 ```
 {
     "msg": "Listing Removed"
 }
 ```
+
 In case there is no such listing (... if we send it again, for example), the following is returned:
+
 ```
 {
     "msg": "Price Listing Not Found"
 }
 ```
-
-

@@ -2,7 +2,7 @@
 layout: default
 title: Heroku & Git
 parent: API
-nav_order: 3
+nav_order: 4
 ---
 
 By Vincent Huynh

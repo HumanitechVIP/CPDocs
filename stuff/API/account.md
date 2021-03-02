@@ -2,17 +2,21 @@
 layout: default
 title: Account
 parent: API
-nav_order: 2
+nav_order: 3
 ---
+
 By Vincent Huynh
+
 # Account
 
-This portion of the API is meant for later use. Especially with the front-end. We hope to have an account system to track user's crop listing feedback. 
+This portion of the API is meant for later use. Especially with the front-end. We hope to have an account system to track user's crop listing feedback.
 
 ## Register a User
+
 ```
 POST croppricingapi.herokuapp.com/api/users
 ```
+
 ```
 headers: {
     'Content-Type': 'application/json'
@@ -25,6 +29,7 @@ body: {
 ```
 
 ### For example,
+
 ```
 {
 	"name": "HumanitechVIP Dummy",
@@ -32,7 +37,9 @@ body: {
 	"password": "supersecretpassword"
 }
 ```
+
 Returns a token, which will be used for user validation. If the user's email as already been registered , the following will be returned:
+
 ```
 {
     "errors": [
@@ -42,7 +49,9 @@ Returns a token, which will be used for user validation. If the user's email as 
     ]
 }
 ```
+
 Once again, the errors are listed in the "errors" array. If the user puts too short of a password, the following is returned:
+
 ```
 {
     "errors": [
@@ -55,14 +64,19 @@ Once again, the errors are listed in the "errors" array. If the user puts too sh
     ]
 }
 ```
+
 We should probably do simple password length checks in the frontend so we don't needlessly push things to the API.
 
 ## Login User
-To login the user, we can send 
+
+To login the user, we can send
+
 ```
 POST croppricingapi.herokuapp.com/api/auth
 ```
+
 with the content
+
 ```
 headers: {
     'Content-Type': 'application/json'
@@ -72,20 +86,26 @@ body: {
 	"password": "password"
 }
 ```
+
 ### For example,
+
 ```
 {
 	"email": "humanitechapp@gmail.com",
 	"password": "password"
 }
 ```
+
 returns a token, like so:
+
 ```
 {
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY2ZDA4YTFlMDY2NzEwMDE3NTczOWU4In0sImlhdCI6MTYwNTExOTUzOCwiZXhwIjoxNjA1MTIzMTM4fQ.C9kFKtgKpT-RLAwXM4za6zd9cEA_Xbkmp54WxLnwkH8"
 }
 ```
+
 If the user credentials are incorrect, the following is returned:
+
 ```
 {
     "errors": [
@@ -95,19 +115,25 @@ If the user credentials are incorrect, the following is returned:
     ]
 }
 ```
+
 Note that the error message for **both** the username **and** password are the exact same: this is intentional.
 
 ## Get User from Token
+
 Once we have a Token from logging in, we can get the user's information.
+
 ```
 GET croppricingapi.herokuapp.com/api/auth
 ```
+
 ```
 headers: {
     'x-auth-token': '<THAT_LONG_TOKEN_FROM_LOGIN_OR_REGISTER>'
 }
 ```
+
 If we use the token generated before in the login, we should get the following user information returned:
+
 ```
 {
     "level": 3,
@@ -118,13 +144,17 @@ If we use the token generated before in the login, we should get the following u
     "__v": 0
 }
 ```
+
 Note that pretty much all user information is returned except for the password. We do not want to return the password back. No.
 
 ## Updating Password (Requires Token)
+
 Once the user is logged in, they can update their password if needed.
+
 ```
 POST croppricingapi.herokuapp.com/api/users/updatepassword
 ```
+
 ```
 headers: {
     'x-auth-token': '<THAT_LONG_TOKEN_FROM_LOGIN_OR_REGISTER>'
@@ -133,7 +163,9 @@ body: {
     'password': 'newpassword'
 }
 ```
+
 If the token is valid, the API will return the user's information (without the password).
+
 ```
 {
     "level": 3,
@@ -144,7 +176,9 @@ If the token is valid, the API will return the user's information (without the p
     "__v": 0
 }
 ```
+
 If the token is invalid, the API returns
+
 ```
 {
     "msg": "INVALID TOKEN"
